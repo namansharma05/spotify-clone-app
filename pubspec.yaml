@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -22,16 +23,16 @@ flutter:
     - assets/images/
     - assets/vectors/
   
-  fonts:
-    - family: Satoshi
-      fonts:
-        - assets: assets/fonts/Satoshi-Block.ttf
-          weight: 900
-        - assets: assets/fonts/Satoshi-Bold.ttf
-          weight: 600
-        - assets: assets/fonts/Satoshi-Light.ttf
-          weight: 500
-        - assets: assets/fonts/Satoshi-Medium.ttf
-          weight: 400
-        - assets: assets/fonts/Satoshi-Regular.ttf
-          weight: 300
+  # fonts:
+  #   - family: Satoshi
+  #     fonts:
+  #       - assets: assets/fonts/Satoshi-Block.ttf
+  #         weight: 900
+  #       - assets: assets/fonts/Satoshi-Bold.ttf
+  #         weight: 600
+  #       - assets: assets/fonts/Satoshi-Light.ttf
+  #         weight: 500
+  #       - assets: assets/fonts/Satoshi-Medium.ttf
+  #         weight: 400
+  #       - assets: assets/fonts/Satoshi-Regular.ttf
+  #         weight: 300
