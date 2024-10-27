@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone/core/configs/assets/app_images.dart';
 import 'package:spotify_clone/core/configs/assets/app_vectors.dart';
 import 'package:spotify_clone/core/configs/theme/app_colors.dart';
-import 'dart:math' show pi;
+import 'package:spotify_clone/main.dart';
+import 'package:spotify_clone/presentation/mode/bloc/theme_cubit.dart';
 
 class ChooseMode extends StatelessWidget {
   const ChooseMode({super.key});
@@ -30,33 +32,43 @@ class ChooseMode extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Container(
-                          height: MediaQuery.of(context).size.width * 0.1,
-                          width: MediaQuery.of(context).size.width * 0.1,
-                          decoration: BoxDecoration(
-                            color: AppColors.darkGrey,
-                            borderRadius: BorderRadius.circular(30),
+                        GestureDetector(
+                          onTap: () {
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                          },
+                          child: Container(
+                            height: MediaQuery.of(context).size.width * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.1,
+                            decoration: BoxDecoration(
+                              color: AppColors.darkGrey,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: SvgPicture.asset(AppVectors.moon, fit: BoxFit.none,)
                           ),
-                          child: Icon(Icons.nightlight_outlined, color: Colors.white,),
                         ),
                         SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
-                        Text('Dark Mode', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w300),),
+                        const Text('Dark Mode', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w500),),
                       ],
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width * 0.1,),
                     Column(
                       children: [
-                        Container(
-                          height: MediaQuery.of(context).size.width * 0.1,
-                          width: MediaQuery.of(context).size.width * 0.1,
-                          decoration: BoxDecoration(
-                            color: AppColors.darkGrey,
-                            borderRadius: BorderRadius.circular(30),
+                        GestureDetector(
+                          onTap: () {
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                          },
+                          child: Container(
+                            height: MediaQuery.of(context).size.width * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.1,
+                            decoration: BoxDecoration(
+                              color: AppColors.darkGrey,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: SvgPicture.asset(AppVectors.sun, fit: BoxFit.none,)
                           ),
-                          child: const Icon(Icons.wb_sunny_outlined, color: Colors.white,),
                         ),
                         SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
-                        const Text('Light Mode', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w300),),
+                        const Text('Light Mode', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w500),),
                       ],
                     ),
                   ],
