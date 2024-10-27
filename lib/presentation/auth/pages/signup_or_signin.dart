@@ -21,20 +21,20 @@ class SignupOrSignin extends StatelessWidget {
           Align(
             alignment: Alignment.center, 
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.27),
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(AppVectors.logo),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
-                  const Text('Enjoy Listening To Music', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26,),),
+                  Text('Enjoy Listening To Music', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26),),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
                   const Text('Spotify is a proprietary Swedish audio\nstreaming and media services provider', style: TextStyle(fontSize: 17, color: Color(0xffA0A0A0)), textAlign: TextAlign.center,),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
                   Row(
                     children: [
-                      Expanded(child: BasicAppButton(onPressed: (){}, title: 'Register')),
-                      SizedBox(width: MediaQuery.of(context).size.width * 0.1,),
+                      Expanded(flex: 2, child: BasicAppButton(onPressed: (){}, title: 'Register')),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.2,),
                       TextButton(onPressed: (){}, child: Text('Sign in', style: TextStyle(color: context.isDarkMode ? Colors.white : Colors.black, fontSize: 19, fontWeight: FontWeight.bold,),),),
                     ],
                   )
