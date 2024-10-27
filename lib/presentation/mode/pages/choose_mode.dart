@@ -5,7 +5,7 @@ import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone/core/configs/assets/app_images.dart';
 import 'package:spotify_clone/core/configs/assets/app_vectors.dart';
 import 'package:spotify_clone/core/configs/theme/app_colors.dart';
-import 'package:spotify_clone/main.dart';
+import 'package:spotify_clone/presentation/auth/pages/signup_or_signin.dart';
 import 'package:spotify_clone/presentation/mode/bloc/theme_cubit.dart';
 
 class ChooseMode extends StatelessWidget {
@@ -75,6 +75,7 @@ class ChooseMode extends StatelessWidget {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
                 BasicAppButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupOrSignin()));
                 }, title: 'Continue')
               ],
             ),

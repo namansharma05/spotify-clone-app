@@ -13,7 +13,6 @@ class ThemeCubit extends HydratedCubit<ThemeMode>{
 
   @override
   Map<String, dynamic>? toJson(ThemeMode state) {
-    // TODO: implement toJson
-    throw UnimplementedError();
+    return {};
   }
 }
