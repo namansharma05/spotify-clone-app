@@ -3,10 +3,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:spotify_clone/common/widgets/appbar/app_bar.dart';
 import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone/core/configs/assets/app_vectors.dart';
-import 'package:spotify_clone/presentation/auth/pages/signin.dart';
+import 'package:spotify_clone/presentation/auth/pages/signup.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class Signin extends StatelessWidget {
+  const Signin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Signup extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.04,
         ),
       ),
-      bottomNavigationBar: _signinText(context),
+      bottomNavigationBar: _signupText(context),
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: MediaQuery.of(context).size.height * 0.06,
@@ -30,10 +30,10 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.06,
             ),
-            _fullNameField(context),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
+            // _fullNameField(context),
+            // SizedBox(
+            //   height: MediaQuery.of(context).size.height * 0.02,
+            // ),
             _emailField(context),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
@@ -42,7 +42,7 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.04,
             ),
-            BasicAppButton(onPressed: () {}, title: 'Create Account'),
+            BasicAppButton(onPressed: () {}, title: 'Sign In'),
           ],
         ),
       ),
@@ -51,20 +51,12 @@ class Signup extends StatelessWidget {
 
   Widget _registerText(context) {
     return Text(
-      'Register',
+      'Sign In',
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: MediaQuery.of(context).size.width * 0.05,
       ),
       textAlign: TextAlign.center,
-    );
-  }
-
-  Widget _fullNameField(context) {
-    return TextField(
-      decoration: const InputDecoration(
-        hintText: 'Full Name',
-      ).applyDefaults(Theme.of(context).inputDecorationTheme),
     );
   }
 
@@ -84,22 +76,22 @@ class Signup extends StatelessWidget {
     );
   }
 
-  Widget _signinText(context) {
+  Widget _signupText(context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            "Do you have and account?",
+            "Not A Member?",
             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
           ),
           TextButton(
               onPressed: () {
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const Signin()));
+                    MaterialPageRoute(builder: (context) => const Signup()));
               },
-              child: Text('Sign In'))
+              child: Text('Register Now'))
         ],
       ),
     );
