@@ -99,7 +99,7 @@ class Signup extends StatelessWidget {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => const Signin()));
               },
-              child: Text('Sign In'))
+              child: const Text('Sign In')),
         ],
       ),
     );
